@@ -70,7 +70,7 @@ let socket = io('https://ws.generals.io');
 let accounts = {
 	bot: ['asudhfiou','nimasabibc'],
 };
-let [user_id, myusername] = accounts.bot, custom_game_id = 'jsahuaehx', user_idANDkey = [user_id, 'sd09fjd203i0ejwi'];
+let [user_id, myusername] = accounts.bot, custom_game_id = 'jsahuaehx', user_idANDkey = [user_id, 'sd09fjdZ03i0ejwi_changeme'];
 let chat_room, replay_url;
 let keep_playing = true, isconnected = false, game_end = true;
 let stepdelta = [[0, 1], [0, -1], [1, 0], [-1, 0]];
@@ -157,7 +157,7 @@ socket.on('chat_message', function (chat_room, data) {
 });
 function join_game(...args) {
 	if (isconnected) {
-		socket.emit(...args, ...user_idANDkey);
+		socket.emit(...args, ...user_idANDkey,null);
 		if (args[0] === "join_private") {
 			setTimeout(() => {
 				set_force_start_for_custom(args[1]);
