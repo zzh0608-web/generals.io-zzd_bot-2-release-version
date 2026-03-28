@@ -66,7 +66,7 @@ class Queue {
 	}
 }	
 let max = Math.max, min = Math.min, abs = Math.abs, floor = Math.floor, ceil = Math.ceil, pow = Math.pow, random = Math.random, log = Math.log, Eps = 1e-5;
-let socket = io('https://bot.generals.io');
+let socket = io('https://ws.generals.io');
 let accounts = {
 	bot: ['asudhfiou','nimasabibc'],
 };
@@ -85,7 +85,7 @@ socket.on('disconnect', function () {
 });
 socket.on('connect', function () {
 	console.log('Connected to server.');
-	socket.emit('set_username', user_id, myusername);
+	socket.emit('set_username', user_id, myusername,'sd09fjdZ03i0ejwi');
 	isconnected = true;
 	playgames();
 });
